@@ -1,9 +1,6 @@
 /*
  * Name: RAMYA NAYAK
- * 
- * Course: CS 151
- * Final Project
- * Date: 12/08/2023
+ * Date: December 08, 2023
  * 
  */
 
@@ -51,7 +48,8 @@ public class User {
 		} while (user != null);
 		
 	}
-	
+
+	// Determines whether user is a customer or staff member
 	private static String determineUser() {
 		Scanner in = new Scanner(System.in);
 		String user = null;
@@ -90,7 +88,8 @@ public class User {
 		}
 		return user;
 	}
-	
+
+	// Displays user options
 	private static void displayUserOptions() {
 		System.out.println();
 		System.out.println("Choose which user you are (Enter the corresponding integer)");
