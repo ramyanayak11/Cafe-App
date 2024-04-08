@@ -1,9 +1,6 @@
 /*
  * Name: RAMYA NAYAK
- * 
- * Course: CS 151
- * Final Project
- * Date: 12/08/2023
+ * Date: December 08, 2023
  * 
  */
 
@@ -17,7 +14,8 @@ public class Staff {
 	Staff(Process menuManager) {
 		MenuManager = menuManager;
 	}
-	
+
+	// Prompt for staff user
 	protected void prompt() {
 		boolean valid = false;
 		int choice;
@@ -61,7 +59,8 @@ public class Staff {
 			}
 		}
 	}
-	
+
+	// Adds item to menu
 	private void addItem() {
 		Scanner lineInput = new Scanner(System.in);
 		String category = "";
@@ -119,7 +118,8 @@ public class Staff {
 		System.out.println("NEW MENU:");
 		MenuManager.showMenu();
 	}
-	
+
+	// Removes item from menu
 	private void removeItem() {
 		Scanner lineInput = new Scanner(System.in);
 		System.out.print("Enter the name of the item to be removed from the menu: ");
@@ -130,7 +130,8 @@ public class Staff {
 		System.out.println("NEW MENU:");
 		MenuManager.showMenu();
 	}
-	
+
+	// Edits menu item
 	private void editItem() {
 		Scanner lineInput1 = new Scanner(System.in);
 		Scanner lineInput2 = new Scanner(System.in);
@@ -187,7 +188,8 @@ public class Staff {
 		System.out.println("NEW MENU:");
 		MenuManager.showMenu();
 	}
-	
+
+	// Displays list of possible tasks
 	private void displayTaskOptions() {
 		System.out.println("1 - Add a new menu item");
 		System.out.println("2 - Edit an existing menu item");
@@ -196,7 +198,8 @@ public class Staff {
 		System.out.println();
 		System.out.print("Your choice: ");
 	}
-	
+
+	// Assigns a category to any menu item
 	private void categoryOptions() {
 		System.out.println("Choose the category of this new item: (Enter the corresponding integer)");
 		System.out.println("1 - Drink");
@@ -204,7 +207,8 @@ public class Staff {
 		System.out.println();
 		System.out.print("Your choice: ");
 	}
-	
+
+	// Prints options for editing menu items
 	private void editOptions() {
 		System.out.println("Which of the following properties would you like to edit? (Enter the corresponding integer)");
 		System.out.println("1 - Item name");
