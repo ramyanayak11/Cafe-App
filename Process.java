@@ -1,9 +1,6 @@
 /*
  * Name: RAMYA NAYAK
- * 
- * Course: CS 151
- * Final Project
- * Date: 12/08/2023
+ * Date: December 08, 2023
  * 
  */
 
@@ -27,7 +24,8 @@ public class Process {
 		menu.add(new MenuItem("Banana Bread", 4.00, "food"));
 		menu.add(new MenuItem("Sandwich", 5.00, "food"));
 	}
-	
+
+	// Shows menu to user
 	protected void showMenu() {
 		int printIndex = 1;
 		System.out.println();
@@ -52,7 +50,8 @@ public class Process {
 		System.out.println();
 		System.out.println("------------------------------------------------");
 	}
-	
+
+	// Shows users' order summary
 	protected void showOrderSummary(ArrayList<MenuItem> order, double total) {
 		double tax = Math.round((total*0.1025) * 100) / 100d;
 		
@@ -68,11 +67,13 @@ public class Process {
 		System.out.printf("\t%33s\t\t%15.2f\n","TOTAL",total+tax);
 		System.out.println();
 	}
-	
+
+	// Adds item to menu
 	protected void addItem(String name, double price, String category) {
 		menu.add(new MenuItem(name, price, category));
 	}
-	
+
+	// Removes item from menu
 	protected void removeItem(String name) {
 		int index = menuContains(name);
 		
@@ -80,7 +81,8 @@ public class Process {
 			menu.remove(index);
 		}
 	}
-	
+
+	// Edits menu item
 	protected void editItem(String prevName, String newName, double price) {
 		int index = menuContains(prevName);
 		
@@ -95,7 +97,8 @@ public class Process {
 			menu.get(index).price = price;
 		}
 	}
-	
+
+	// Checks whether the menu contains given item
 	protected int menuContains(String name) {
 		for (int i = 0; i < menu.size(); ++i) {
 			if (menu.get(i).name.compareToIgnoreCase(name) == 0) {
@@ -104,7 +107,8 @@ public class Process {
 		}
 		return -1;
 	}
-	
+
+	// Resets menu item's price to original
 	protected void resetModifiedPrice() {
 		for (int i = 0; i < menu.size(); ++i) {
 			menu.get(i).modifiedPrice = menu.get(i).price;
