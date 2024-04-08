@@ -1,9 +1,6 @@
 /*
  * Name: RAMYA NAYAK
- * 
- * Course: CS 151
- * Final Project
- * Date: 12/08/2023
+ * Date: December 8, 2023
  * 
  */
 
@@ -24,6 +21,7 @@ public class Customer {
 		order = new ArrayList();
 	}
 
+	// Takes order from user
 	protected void order() {
 		String input;
 		int index;
@@ -51,7 +49,8 @@ public class Customer {
 		paymentStage();
 		MenuManager.resetModifiedPrice();
 	}
-	
+
+	// Adds any customizations to drinks and adjusts the price accordingly
 	protected void customization() {
 		ArrayList<Integer> drinks = containsDrink(order, new ArrayList());
 		
@@ -98,7 +97,8 @@ public class Customer {
 		}
 		return drinks;
 	}
-	
+
+	// Shows the order summary, takes payment, and displays the change to be received
 	protected void paymentStage() {
 		calculateTotal();
 		MenuManager.showOrderSummary(order, orderTotal);
@@ -123,7 +123,8 @@ public class Customer {
 		System.out.println();
 		System.out.println("Thank you for stopping by. Have a great day!");
 	}
-	
+
+	// Calculates total cost by iterating through ordered items
 	protected void calculateTotal() {
 		orderTotal = 0.00;
 		
@@ -132,7 +133,8 @@ public class Customer {
 		}
 		orderTotal = Math.round(orderTotal * 100) / 100d;
 	}
-	
+
+	// Calculates the change and rounds accordingly
 	protected double calculateChange(double total, double paid) {
 		double change = paid - (total*1.1025);
 		while (Math.round(change * 100) / 100d < 0) {
